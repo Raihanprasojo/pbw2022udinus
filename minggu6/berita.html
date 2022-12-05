@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="main">Home</a>
+            <a href="tutors.html" class="not-main">tutors</a>
+            <a href="contact.html" class="not-main">Contact</a>
+            <a href="about.html" class="not-main">video</a>
+            <a href="berita.html" class="main">berita</a>
+        </nav>
+
+    </header>
+  
+    <div class="content">
+      <div class="faq-item">
+        <button class="faq-question" data-item="1">
+          posisi?
+        </button>
+        <div class="faq-answer" style="display: none" id="answer-1">
+          Jauh
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-item="2">
+          sudah makan?
+        </button>
+        <div class="faq-answer" style="display: none" id="answer-2">
+          Belum
+      </div>
+    </div>
+
+    <script>
+      const buttons = document.getElementsByClassName("faq-question");
+
+      for (var i = 0; i < buttons.length; i++) {
+        const button = buttons[i];
+        const number = button.dataset.item;
+        const answer = document.querySelector(`#answer-${number}`);
+        // console.log(answer);
+        button.addEventListener("click", () => {
+          if (answer.style.display === "none") answer.style.display = "block";
+          else answer.style.display = "none";
+        });
+      }
+    </script>
+    <footer>
+      <div class="footer">Copyright &copy; 2022 mimin</div>
+    </footer>
+  </body>
+</html>
